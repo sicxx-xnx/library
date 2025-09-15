@@ -71,8 +71,12 @@ display: flex;
 
 .titleTemplateHolder {
 display: flex;
-justify-content: center;
+justify-content: start;
+margin-top: 5%;
 width: 100%;    
+}
+.titleTemplateHolder::before {
+content: "Title"":" ;    
 }
 
 
