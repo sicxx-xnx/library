@@ -49,3 +49,33 @@ width: 10%;
 text-decoration: underline;    
 cursor: pointer;
 }
+
+.libaryContainer{
+display: grid;   
+grid-template-columns:  repeat(10, 10%);
+grid-template-rows: repeat(2, 50%);
+grid-auto-flow: row;
+height: 80vh;
+width: 100%;
+overflow: hidden;
+gap: 2.5%;
+}
+
+.bookTemplate {
+grid-column: span 2;
+grid-row: span 1;
+border: lightblue solid 2px;
+border-radius: 40px;  
+display: flex;
+}
+
+.titleTemplateHolder {
+display: flex;
+justify-content: center;
+width: 100%;    
+}
+
+
+.addABookForm{
+display: none;    
+}
