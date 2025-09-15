@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+* {
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+html {
+--h1Text: "Bitcount Grid Double", system-ui ;    
+}
+h1{
+font-family: var(--h1Text);
+font-weight: 300; 
+font-size: 3rem;   
+} 
+.header {
+display: grid;
+grid-template-columns: 100%;
+grid-template-rows: 30% 70%;    
+}
+
+.bottom-header {
+background-color: lightgray;   
+display: flex; 
+border-top:lightblue solid 1px;
+}
+
+.left {
+display: flex;
+align-items: center;    
+height: 100%;
+width: 50%;
+}
+.right {
+display: flex;
+justify-content: end;   
+height: 100%;
+width: 50%; 
+}
+.item {
+display: flex; 
+align-items: center;   
+justify-content: end;
+}
+.item > img {
+height: 100%;
+width: 10%;
+}
+.item > h2:hover {
+text-decoration: underline;    
+cursor: pointer;
+}
