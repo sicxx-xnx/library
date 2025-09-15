@@ -28,14 +28,23 @@ myLibrary.push(book1)
 
 function showsBooks(){
 myLibrary.forEach(element => {
+let RemoveButton = document.createElement("button")
+RemoveButton.innerText = "Remove Book"    
 let container = document.createElement("div")  
 container.setAttribute("class","bookTemplate")  
 let title = document.createElement("h2")
 title.setAttribute("class","titleTemplateHolder")
 container.appendChild(title)
+container.appendChild(RemoveButton)
 fullLibray.appendChild(container)
 console.log(myLibrary)
-title.innerText = element.title    
+title.innerText = element.title
+container.setAttribute("data-id",element.id)
+let specificContainer = document.querySelector(`[data-id = "${element.id}"]`)
+RemoveButton.addEventListener("click", ()=> {
+specificContainer.style.display = "none"    
+})
+
 });
     
 
@@ -43,4 +52,5 @@ title.innerText = element.title
 }
 
 addBookToLibrary("hello","peyton",25,"no")
+addBookToLibrary("The Big Book","someguy",164,"yes")
 window.addEventListener("DOMContentLoaded", showsBooks())
