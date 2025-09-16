@@ -59,6 +59,7 @@ height: 80vh;
 width: 100%;
 overflow: hidden;
 gap: 2.5%;
+margin-top: 2%
 }
 
 .bookTemplate {
@@ -68,19 +69,32 @@ border: lightblue solid 2px;
 border-radius: 40px;  
 display: flex;
 flex-direction: column;
+padding: 5%;
 }
 
 .titleTemplateHolder {
 display: flex;
 justify-content: start;
-margin-top: 5%;
+/* margin-top: 5%; */
 width: 100%;    
 }
-.titleTemplateHolder::before {
-content: "Title"":" ;    
-}
-
-
 .addABookForm{
 display: none;    
+}
+
+.authorTemplate::before{
+content: "written by ";
+}
+.pagesTemplate::after{
+content: " pages long";    
+}
+.imgTemplate{
+height: 300px;  
+margin-top: 3px;
+margin-bottom: 3px;  
+}
+.pagesHolder {
+display: flex;
+justify-content: space-between;
+width: 100%;    
 }
