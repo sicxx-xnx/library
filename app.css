@@ -78,8 +78,22 @@ justify-content: start;
 /* margin-top: 5%; */
 width: 100%;    
 }
+
+.addABookFormholder{
+display: none;
+justify-content: end;
+width: 100%;
+}
 .addABookForm{
-display: none;    
+display: flex;    
+flex-direction: column;
+width: fit-content;
+align-items: start;
+border: 1 solid beige;
+background-color: blanchedalmond;
+}
+.addABookForm input {
+width: 50%;    
 }
 
 .authorTemplate::before{
@@ -97,4 +111,9 @@ margin-bottom: 3px;
 display: flex;
 justify-content: space-between;
 width: 100%;    
+}
+.readholderbox{
+display: flex;
+flex-direction: row;
+gap: 5%;    
 }

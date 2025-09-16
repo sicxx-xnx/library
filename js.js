@@ -1,5 +1,6 @@
 let addANewBook = document.querySelector("#addANewBook")
 let newBookContainer = document.querySelector("#newBook")
+let newBookTitle = document.querySelector("#title")
 
 let fullLibray = document.querySelector(".libaryContainer")
 
@@ -18,7 +19,7 @@ function book(title, author, pages, read) {
 }}
 
 addANewBook.addEventListener("click", ()=> {
-newBookContainer.style.display = "block"
+newBookContainer.style.display = "flex"
 })
 
 function addBookToLibrary(title, author, pages, read) {
