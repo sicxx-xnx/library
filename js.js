@@ -3,10 +3,9 @@ let newBookContainer = document.querySelector("#newBook")
 
 
 const newBookForm = document.getElementById("newBookForm")
-let newBookTitle = document.querySelector("#title")
-let newBookAuthor = document.querySelector("#Author")
-let newBookPages = document.querySelector("#pages")
-let newBookRead = document.querySelector("#read")
+
+
+
 
 let fullLibray = document.querySelector(".libaryContainer")
 
@@ -94,3 +93,16 @@ addBookToLibrary("The Big Book","someguy",164,false)
 addBookToLibrary("Eargon","Christopher Paolini",544,true)
 
 window.addEventListener("DOMContentLoaded", showsBooks())
+newBookForm.addEventListener("submit",function (event) {
+event.preventDefault()
+let newBookTitle = document.querySelector("#title")
+let newBookAuthor = document.querySelector("#Author")
+let newBookPages = document.querySelector("#pages")
+let newBookRead = document.querySelector("#read")
+
+let array = []
+
+const book2 = new book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.checked)
+array.push(book2)
+console.log(array)
+})
