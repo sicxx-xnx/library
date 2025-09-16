@@ -1,6 +1,12 @@
 let addANewBook = document.querySelector("#addANewBook")
 let newBookContainer = document.querySelector("#newBook")
+
+
+const newBookForm = document.getElementById("newBookForm")
 let newBookTitle = document.querySelector("#title")
+let newBookAuthor = document.querySelector("#Author")
+let newBookPages = document.querySelector("#pages")
+let newBookRead = document.querySelector("#read")
 
 let fullLibray = document.querySelector(".libaryContainer")
 
