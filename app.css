@@ -52,7 +52,7 @@ cursor: pointer;
 
 .libaryContainer{
 display: grid;   
-grid-template-columns:  repeat(10, 10%);
+grid-template-columns:  repeat(8, 10%);
 grid-template-rows: repeat(2, 50%);
 grid-auto-flow: row;
 height: 80vh;
