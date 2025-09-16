@@ -106,6 +106,12 @@ const book2 = new book(newBookTitle.value, newBookAuthor.value, newBookPages.val
 array.push(book2)
 myLibrary.push(book2)
 
+newBookContainer.style.display = "none"
+newBookTitle.value = ""
+newBookAuthor.value =""
+newBookPages.value = ""
+newBookRead.checked = false
+
 array.forEach(element => {
 let RemoveButton = document.createElement("button")
 RemoveButton.innerText = "Remove Book"    
