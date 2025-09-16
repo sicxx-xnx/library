@@ -104,5 +104,58 @@ let array = []
 
 const book2 = new book(newBookTitle.value, newBookAuthor.value, newBookPages.value, newBookRead.checked)
 array.push(book2)
-console.log(array)
+myLibrary.push(book2)
+
+array.forEach(element => {
+let RemoveButton = document.createElement("button")
+RemoveButton.innerText = "Remove Book"    
+let container = document.createElement("div")  
+container.setAttribute("class","bookTemplate")  
+let title = document.createElement("h2")
+title.setAttribute("class","titleTemplateHolder")
+let author = document.createElement("p")
+author.setAttribute("class","authorTemplate")
+author.innerText = element.author
+title.innerText = element.title
+let pages = document.createElement("p")
+pages.innerText = element.pages
+pages.setAttribute("class","pagesTemplate")
+
+let pagesTemp = document.createElement("div")
+pagesTemp.setAttribute("class","pagesHolder")
+
+let readlabel = document.createElement("label")
+readlabel.innerText = "Read? "
+readlabel.setAttribute("for","Read")
+let read = document.createElement("input")
+read.setAttribute("type", "checkbox")
+read.setAttribute("class", "checkbox")
+read.setAttribute("name", "Read")
+if (element.read) {
+read.checked = true    
+}
+
+let img = document.createElement("img")
+img.setAttribute("src","https://picsum.photos/600/400")
+img.setAttribute("class","imgTemplate")
+
+container.appendChild(title)
+container.appendChild(author)
+container.appendChild(pagesTemp)
+pagesTemp.appendChild(pages)
+pagesTemp.appendChild(readlabel)
+pagesTemp.appendChild(read)
+container.appendChild(img)
+container.appendChild(RemoveButton)
+fullLibray.appendChild(container)
+
+container.setAttribute("data-id",element.id)
+let specificContainer = document.querySelector(`[data-id = "${element.id}"]`)
+RemoveButton.addEventListener("click", ()=> {
+specificContainer.style.display = "none"    
+})
+
+})
+
+
 })
