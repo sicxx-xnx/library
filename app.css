@@ -4,6 +4,8 @@ margin: 0px;
 padding: 0px;
 box-sizing: border-box;
 }
+body{  
+}
 html {
 --h1Text: "Bitcount Grid Double", system-ui ;    
 }
@@ -70,6 +72,7 @@ border-radius: 40px;
 display: flex;
 flex-direction: column;
 padding: 5%;
+min-height: fit-content;
 }
 
 .titleTemplateHolder {
@@ -81,19 +84,30 @@ width: 100%;
 
 .addABookFormholder{
 display: none;
-justify-content: end;
+position: fixed;
+justify-content: center;
+align-items: center;
 width: 100%;
+height: 100%;
+/* bottom: 0px;
+top: 0px;
+right: 0px;
+left: 0px; */
+background-color: rgba(0, 0, 0, 0.555);
 }
 .addABookForm{
-display: flex;    
+display: flex;   
 flex-direction: column;
 width: fit-content;
+height: fit-content;
 align-items: start;
 border: 1 solid beige;
 background-color: blanchedalmond;
+
 }
 .addABookForm input {
-width: 50%;    
+width: 80%; 
+margin: 5%;   
 }
 
 .authorTemplate::before{
@@ -103,7 +117,7 @@ content: "written by ";
 content: " pages long";    
 }
 .imgTemplate{
-height: 300px;  
+height: 60%;  
 margin-top: 3px;
 margin-bottom: 3px;  
 }

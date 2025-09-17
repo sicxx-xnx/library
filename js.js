@@ -153,7 +153,7 @@ pagesTemp.appendChild(readlabel)
 pagesTemp.appendChild(read)
 container.appendChild(img)
 container.appendChild(RemoveButton)
-fullLibray.appendChild(container)
+fullLibray.prepend(container)
 
 container.setAttribute("data-id",element.id)
 let specificContainer = document.querySelector(`[data-id = "${element.id}"]`)
