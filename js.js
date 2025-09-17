@@ -1,14 +1,7 @@
 let addANewBook = document.querySelector("#addANewBook")
 let newBookContainer = document.querySelector("#newBook")
-
-
 const newBookForm = document.getElementById("newBookForm")
-
-
-
-
 let fullLibray = document.querySelector(".libaryContainer")
-
 const myLibrary = []
 
 
@@ -22,18 +15,13 @@ function book(title, author, pages, read) {
   this.read = read;
   this.id = crypto.randomUUID()
 }}
-
-addANewBook.addEventListener("click", ()=> {
-newBookContainer.style.display = "flex"
-})
-
 function addBookToLibrary(title, author, pages, read) {
 const book1 = new book(title, author, pages, read)
 myLibrary.push(book1)
 }
-
 function showsBooks(){
 myLibrary.forEach(element => {
+  let readdiv = document.createElement("div") 
 let RemoveButton = document.createElement("button")
 RemoveButton.innerText = "Remove Book"    
 let container = document.createElement("div")  
@@ -70,8 +58,9 @@ container.appendChild(title)
 container.appendChild(author)
 container.appendChild(pagesTemp)
 pagesTemp.appendChild(pages)
-pagesTemp.appendChild(readlabel)
-pagesTemp.appendChild(read)
+pagesTemp.appendChild(readdiv)
+readdiv.appendChild(readlabel)
+readdiv.appendChild(read)
 container.appendChild(img)
 container.appendChild(RemoveButton)
 fullLibray.appendChild(container)
@@ -113,6 +102,7 @@ newBookPages.value = ""
 newBookRead.checked = false
 
 array.forEach(element => {
+  let readdiv = document.createElement("div") 
 let RemoveButton = document.createElement("button")
 RemoveButton.innerText = "Remove Book"    
 let container = document.createElement("div")  
@@ -149,19 +139,32 @@ container.appendChild(title)
 container.appendChild(author)
 container.appendChild(pagesTemp)
 pagesTemp.appendChild(pages)
-pagesTemp.appendChild(readlabel)
-pagesTemp.appendChild(read)
+pagesTemp.appendChild(readdiv)
+readdiv.appendChild(readlabel)
+readdiv.appendChild(read)
 container.appendChild(img)
 container.appendChild(RemoveButton)
-fullLibray.prepend(container)
+fullLibray.appendChild(container)
 
 container.setAttribute("data-id",element.id)
 let specificContainer = document.querySelector(`[data-id = "${element.id}"]`)
 RemoveButton.addEventListener("click", ()=> {
-specificContainer.style.display = "none"    
+specificContainer.style.display = "none"   
 })
 
 })
 
 
+})
+addANewBook.addEventListener("click", ()=> {
+newBookContainer.style.display = "flex"
+})
+newBookContainer.addEventListener("click",(event) => {
+console.log(event.target)   
+if (event.target.id != "newBook"  ) {
+event.stopPropagation()   
+} else { newBookContainer.style.display = "none"
+   
+}   
+ 
 })
